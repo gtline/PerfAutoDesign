@@ -5,6 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - PerfAutoDesign</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 5px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            background: #555;
+            border-radius: 5px;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        .services-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .service {
+            width: 90%;
+            max-width: 400px;
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 350px;
+        }
+        .service img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .service h3, .service p, .service button {
+            width: 100%;
+            max-width: 300px;
+        }
+        .service p {
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: none;
+        }
+        .service button {
+            cursor: pointer;
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .service button:hover {
+            background: #0056b3;
+        }
+        @media (min-width: 768px) {
+            .services-container {
+                flex-direction: row;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+            .service {
+                width: 30%;
+            }
+        }
+    </style>
+    <script>
+        function toggleDescription(button) {
+            var description = button.previousElementSibling;
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -30,21 +130,48 @@
                 <h3>Service de base</h3>
                 <p>10€</p>
                 <p>Décrivez les informations importantes telles que la valeur et la durée du service.</p>
-                <button>En savoir plus</button>
+                <button onclick="toggleDescription(this)">En savoir plus</button>
             </div>
             <div class="service">
                 <img src="images/stickers-reseaux.png" alt="Service intermédiaire">
                 <h3>Service intermédiaire</h3>
                 <p>5€</p>
                 <p>Décrivez les informations importantes du service.</p>
-                <button>En savoir plus</button>
+                <button onclick="toggleDescription(this)">En savoir plus</button>
             </div>
             <div class="service">
                 <img src="images/stickers-parebrise.png" alt="Service avancé">
                 <h3>Service avancé</h3>
                 <p>30€</p>
                 <p>Décrivez les points forts du service.</p>
-                <button>En savoir plus</button>
+                <button onclick="toggleDescription(this)">En savoir plus</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services-personnalises">
+        <h2>Services personnalisés</h2>
+        <div class="services-container">
+            <div class="service">
+                <img src="images/wait.jpg" alt="Service personnalisé 1">
+                <h3>Service personnalisé 1</h3>
+                <p>Sur devis</p>
+                <p>Explication détaillée du service personnalisé disponible.</p>
+                <button onclick="toggleDescription(this)">En savoir plus</button>
+            </div>
+            <div class="service">
+                <img src="images/wait.jpg" alt="Service personnalisé 2">
+                <h3>Service personnalisé 2</h3>
+                <p>Sur devis</p>
+                <p>Explication détaillée du service personnalisé disponible.</p>
+                <button onclick="toggleDescription(this)">En savoir plus</button>
+            </div>
+            <div class="service">
+                <img src="images/wait.jpg" alt="Service personnalisé 3">
+                <h3>Service personnalisé 3</h3>
+                <p>Sur devis</p>
+                <p>Explication détaillée du service personnalisé disponible.</p>
+                <button onclick="toggleDescription(this)">En savoir plus</button>
             </div>
         </div>
     </section>
